@@ -1,0 +1,46 @@
+<Project>
+  <Import Project="$([MSBuild]::GetPathOfFileAbove('directory.build.props', '$(MSBuildThisFileDirectory)../'))" />
+
+  <PropertyGroup Label="Defines variables">
+    <ReadmeFilename>readme.md</ReadmeFilename>
+    <ChangelogFilename>changelog.md</ChangelogFilename>
+    <IconFilename>icon.png</IconFilename>
+    <LicenseFilename>license.md</LicenseFilename>
+    <ReadmePath Condition="Exists('$(MSBuildProjectDirectory)\$(ReadmeFilename)')">$(ReadmeFilename)</ReadmePath>
+    <ChangelogPath Condition="Exists('$(MSBuildProjectDirectory)\$(ChangelogFilename)')">$(ChangelogFilename)</ChangelogPath>
+  </PropertyGroup>
+
+  <PropertyGroup Label="Configure .csproj">
+    <IsPackable>true</IsPackable>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <ItemGroup Label="Make internals visible to test project" Condition="Exists('$(MSBuildProjectDirectory)\tests\$(AssemblyName).Tests.csproj')">
+    <InternalsVisibleTo Include="$(AssemblyName).Tests" />
+  </ItemGroup>
+
+  <PropertyGroup Label="Configure NuGet package">
+    <PackageId>$(MSBuildProjectName)</PackageId>
+    <PackageIcon>$(IconFilename)</PackageIcon>
+    <Authors>Alexandre Beauchamp</Authors>
+    <Company>$(Authors)</Company>
+    <Copyright>Copyright (c) $(Authors) 2023 - $([System.DateTime]::Now.Year)</Copyright>
+    <PackageProjectUrl>https://github.com/beauchama/pulsewave/tree/main/src/$(PackageId)</PackageProjectUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageReadmeFile Condition="$(ReadmePath) != ''">$(ReadmeFilename)</PackageReadmeFile>
+    <PackageReleaseNotes Condition="$(ChangelogPath) != ''">$(ChangelogFilename)</PackageReleaseNotes>
+  </PropertyGroup>
+
+  <ItemGroup Label="Include assets">
+    <None Include="$(ReadmePath)" Pack="true" PackagePath="" Condition="$(ReadmePath) != ''" />
+    <None Include="$(ChangelogPath)" Pack="true" PackagePath="" Condition="$(ChangelogPath) != ''" />
+    <None Include="..\..\assets\$(IconFilename)" Pack="true" PackagePath="" Visible="false" />
+    <None Include="..\..\$(LicenseFilename)" Pack="true" PackagePath="" Visible="false" />
+  </ItemGroup>
+
+  <ItemGroup Label="Enabling reproducible builds">
+    <PackageReference Include="DotNet.ReproducibleBuilds" PrivateAssets="all" IncludeAssets="$(IncludedAssets)" />
+  </ItemGroup>
+</Project>

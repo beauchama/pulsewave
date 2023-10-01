@@ -1,0 +1,7 @@
+<Project>
+  <Import Project="$([MSBuild]::GetPathOfFileAbove('directory.packages.props', '$(MSBuildThisFileDirectory)../'))" />
+
+  <ItemGroup Label="Common packages">
+    <PackagerVersion Include="DotNet.ReproducibleBuilds" Version="1.1.1" />
+  </ItemGroup>
+</Project>
