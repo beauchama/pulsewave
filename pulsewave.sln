@@ -1,0 +1,92 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34112.27
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{AFAFF93D-73C7-4841-826F-45EF99C4D681}"
+	ProjectSection(SolutionItems) = preProject
+		license.md = license.md
+		readme.md = readme.md
+		docs\repro.md = docs\repro.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".config", ".config", "{25AE522F-A639-40F5-B794-32C9B3ACFF37}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		directory.build.props = directory.build.props
+		directory.packages.props = directory.packages.props
+		.config\dotnet-tools.json = .config\dotnet-tools.json
+		nuget.config = nuget.config
+		stryker-config.json = stryker-config.json
+		stylecop.json = stylecop.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "assets", "assets", "{7F694796-02DD-447A-9099-C35F37B9C82D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "icons", "icons", "{0D1D135E-1EDD-4717-A29C-DC9A81281DD8}"
+	ProjectSection(SolutionItems) = preProject
+		assets\icons\icon-32.png = assets\icons\icon-32.png
+		assets\icons\icon.png = assets\icons\icon.png
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{6CD26BC0-B3CE-438A-A4CA-567BBB310E83}"
+	ProjectSection(SolutionItems) = preProject
+		.github\codeowners = .github\codeowners
+		.github\code_of_conduct.md = .github\code_of_conduct.md
+		.github\contributing.md = .github\contributing.md
+		.github\security.md = .github\security.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "templates", "templates", "{88E74A16-0419-4E14-93D9-97F6E8B47410}"
+	ProjectSection(SolutionItems) = preProject
+		.github\issue_template\bug.yml = .github\issue_template\bug.yml
+		.github\issue_template\config.yml = .github\issue_template\config.yml
+		.github\issue_template\feature.yml = .github\issue_template\feature.yml
+		.github\pull_request_template.md = .github\pull_request_template.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "rules", "rules", "{D6073BBD-AA3B-41EA-911A-B18E800DD552}"
+	ProjectSection(SolutionItems) = preProject
+		rules\code.style.editorconfig = rules\code.style.editorconfig
+		rules\disabled.editorconfig = rules\disabled.editorconfig
+		rules\meziantou.editorconfig = rules\meziantou.editorconfig
+		rules\name.style.editorconfig = rules\name.style.editorconfig
+		rules\sonar.editorconfig = rules\sonar.editorconfig
+		rules\stylecop.editorconfig = rules\stylecop.editorconfig
+		rules\vsthrd.editorconfig = rules\vsthrd.editorconfig
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{C200F1CE-C8FB-41B2-9786-0A9A0594E12C}"
+	ProjectSection(SolutionItems) = preProject
+		src\directory.build.props = src\directory.build.props
+		src\directory.packages.props = src\directory.packages.props
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "conventions", "conventions", "{0B5566D9-C8C6-4146-8FA7-90E4FF25E8B9}"
+	ProjectSection(SolutionItems) = preProject
+		docs\conventions\branches.md = docs\conventions\branches.md
+		docs\conventions\commits.md = docs\conventions\commits.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{798EDFF4-0CA1-40EA-9F69-F10D23AD621C}"
+	ProjectSection(SolutionItems) = preProject
+		tests\.editorconfig = tests\.editorconfig
+		tests\directory.build.props = tests\directory.build.props
+		tests\directory.packages.props = tests\directory.packages.props
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0D1D135E-1EDD-4717-A29C-DC9A81281DD8} = {7F694796-02DD-447A-9099-C35F37B9C82D}
+		{88E74A16-0419-4E14-93D9-97F6E8B47410} = {6CD26BC0-B3CE-438A-A4CA-567BBB310E83}
+		{0B5566D9-C8C6-4146-8FA7-90E4FF25E8B9} = {AFAFF93D-73C7-4841-826F-45EF99C4D681}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AF655C23-31A7-405A-918E-F75168313347}
+	EndGlobalSection
+EndGlobal
